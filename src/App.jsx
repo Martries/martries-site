@@ -19,18 +19,16 @@ const SERVICES = [
 ];
 
 const PORTFOLIO = [
-  { title: "MSJ Official Website",        cat: "Web Development",    desc: "Commissioned by 'My Science Journey' (MSJ) to design and develop their official website — a clean, informative platform promoting science education and awareness.", img: "https://mukty.netlify.app/projects/msj.png" },
-  { title: "ACTLIP Official Website",     cat: "Web Development",    desc: "Designed and developed the official website for the Africa Center for Technology Law and Innovation Policy — professional, user-friendly, and accessibility-focused.", img: "https://mukty.netlify.app/projects/actlip-1.png" },
-  { title: "LFJ Accounting Service",      cat: "Business Website",   desc: "Developed the official website for LFJ Accounting Service, showcasing the firm's services with a focus on responsive design and easy navigation.", img: "https://mukty.netlify.app/projects/lfj.png" },
-  { title: "Professional Portfolio Design",cat: "Portfolio Website", desc: "Designed a professional portfolio website for a photographer, highlighting their work and unique style in an aesthetically pleasing, responsive layout.", img: "https://mukty.netlify.app/projects/izik.png" },
-  { title: "Fashion Website Design",      cat: "Fashion & Lifestyle",desc: "Created a visually striking fashion website with interactive features, delivering a seamless and engaging user experience.", img: "https://mukty.netlify.app/projects/mademo.png" },
-  { title: "Different Shades of FIO",     cat: "Creative Web Design",desc: "A creative multi-slide website showcasing three distinct aspects of FIO — the Philanthropist, Medical Laboratory Scientist, and Politician — with seamless transitions.", img: "https://mukty.netlify.app/projects/fio.png" },
-  { title: "Harib Tech Law Academy",      cat: "EdTech Platform",    desc: "Designed and built the full platform for Harib Tech Law Academy — a structured legal-tech education platform preparing lawyers, students, judges, and public officers for the digital economy. Includes LMS integration and student portal.", img: "https://haribacademy.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fharib-logo.2c5b37b4.png&w=384&q=75", link: "https://haribacademy.com" },
+  { title: "MSJ Official Website",        cat: "Web Development",    desc: "Commissioned by 'My Science Journey' (MSJ) to design and develop their official website — a clean, informative platform promoting science education and awareness.", tech: "HTML, CSS, Bootstrap, JavaScript", img: "https://mukty.netlify.app/projects/msj.png" },
+  { title: "ACTLIP Official Website",     cat: "Web Development",    desc: "Designed and developed the official website for the Africa Center for Technology Law and Innovation Policy — professional, user-friendly, and accessibility-focused.", tech: "HTML, CSS, JavaScript, jQuery", img: "https://mukty.netlify.app/projects/actlip-1.png" },
+  { title: "LFJ Accounting Service",      cat: "Business Website",   desc: "Developed the official website for LFJ Accounting Service, showcasing the firm's services with a focus on responsive design and easy navigation.", tech: "HTML, CSS, JavaScript", img: "https://mukty.netlify.app/projects/lfj.png" },
+  { title: "Professional Portfolio Design",cat: "Portfolio Website", desc: "Designed a professional portfolio website for a photographer, highlighting their work and unique style in an aesthetically pleasing, responsive layout.", tech: "HTML, CSS, JavaScript", img: "https://mukty.netlify.app/projects/izik.png" },
+  { title: "Fashion Website Design",      cat: "Fashion & Lifestyle",desc: "Created a visually striking fashion website with interactive features, delivering a seamless and engaging user experience.", tech: "HTML, CSS, JavaScript, jQuery", img: "https://mukty.netlify.app/projects/mademo.png" },
+  { title: "Different Shades of FIO",     cat: "Creative Web Design",desc: "A creative multi-slide website showcasing three distinct aspects of FIO — the Philanthropist, Medical Laboratory Scientist, and Politician — with seamless transitions.", tech: "HTML, CSS, JavaScript", img: "https://mukty.netlify.app/projects/fio.png" },
+  { title: "Harib Tech Law Academy",      cat: "EdTech Platform",    desc: "Designed and built the full platform for Harib Tech Law Academy — a structured legal-tech education platform preparing lawyers, students, judges, and public officers for the digital economy. Includes LMS integration and student portal.", tech: "Next.js, React, Tailwind CSS, LMS Integration", img: "https://haribacademy.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fharib-logo.2c5b37b4.png&w=384&q=75", link: "https://haribacademy.com" },
 ];
 
 const ALL_CATS = ["All", ...Array.from(new Set(PORTFOLIO.map(p => p.cat)))];
-
-
 
 const TESTIMONIALS = [
   {
@@ -67,17 +65,18 @@ function FadeIn({ children, delay = 0, className = "" }) {
   );
 }
 
+
 const HOW_STEPS = [
   { num: "01", label: "Discover",  icon: "◎", desc: "We dive deep into your goals, audience, and market to build a solid strategic foundation." },
   { num: "02", label: "Design",    icon: "⬟", desc: "We craft intuitive, on-brand interfaces that look stunning and feel effortless to use." },
   { num: "03", label: "Build",     icon: "◈", desc: "Clean, performant code brought to life — tested, optimised, and built to scale." },
   { num: "04", label: "Launch",    icon: "◉", desc: "We deploy, monitor, and hand over — with ongoing support so you're never on your own." },
 ];
- 
+
 function HowWeWork({ d, accent, textMut, borderCol }) {
   const [active, setActive] = useState(0);
   const [animating, setAnimating] = useState(false);
- 
+
   useEffect(() => {
     const interval = setInterval(() => {
       setAnimating(true);
@@ -88,20 +87,20 @@ function HowWeWork({ d, accent, textMut, borderCol }) {
     }, 2800);
     return () => clearInterval(interval);
   }, []);
- 
+
   const step = HOW_STEPS[active];
   const bg   = d ? "#131F32" : "#fff";
   const bgSoft = d ? "#1B3F72" : "#EAF1FF";
- 
+
   return (
     <div style={{ display: "flex", justifyContent: "center", alignItems: "center", width: "100%" }}>
-      <div style={{ position: "relative", width: 380 }}>
+      <div style={{ position: "relative", width: "100%", maxWidth: 420 }}>
         {/* Rotated background accent */}
         <div style={{ position: "absolute", inset: 0, borderRadius: 16, background: bgSoft, transform: "rotate(4deg)", opacity: 0.6 }} />
- 
+
         {/* Main card */}
-        <div style={{ position: "relative", borderRadius: 14, background: bg, border: `1px solid ${borderCol}`, padding: "36px 32px", boxShadow: "0 24px 64px rgba(27,63,114,0.13)" }}>
- 
+        <div style={{ position: "relative", borderRadius: 14, background: bg, border: `1px solid ${borderCol}`, padding: "28px 20px", boxShadow: "0 24px 64px rgba(27,63,114,0.13)" }}>
+
           {/* Header */}
           <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 32 }}>
             <div>
@@ -114,7 +113,7 @@ function HowWeWork({ d, accent, textMut, borderCol }) {
               ))}
             </div>
           </div>
- 
+
           {/* Step display */}
           <div style={{ opacity: animating ? 0 : 1, transform: animating ? "translateY(10px)" : "translateY(0)", transition: "opacity 0.3s ease, transform 0.3s ease" }}>
             {/* Step number + icon */}
@@ -127,10 +126,10 @@ function HowWeWork({ d, accent, textMut, borderCol }) {
                 <div style={{ fontFamily: "'DM Serif Display', serif", fontSize: 26, color: accent, lineHeight: 1.1 }}>{step.label}</div>
               </div>
             </div>
- 
+
             {/* Description */}
             <p style={{ fontSize: 14, lineHeight: 1.85, color: textMut, marginBottom: 28 }}>{step.desc}</p>
- 
+
             {/* All steps mini-list */}
             <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
               {HOW_STEPS.map((s, i) => (
@@ -158,10 +157,12 @@ export default function App() {
   const [menuOpen, setMenuOpen]   = useState(false);
   const [activeCat, setActiveCat] = useState("All");
   const [lightbox, setLightbox]   = useState(null);
-  const [chatOpen, setChatOpen]   = useState(false);
-  const [chatMsgs, setChatMsgs]   = useState([{ from: "bot", text: "Hi! 👋 I'm the Martries assistant. How can I help you today?" }]);
-  const [chatInput, setChatInput] = useState("");
-  const [formData, setFormData]   = useState({ name: "", email: "", message: "" });
+  const [chatOpen, setChatOpen]     = useState(false);
+  const [chatMsgs, setChatMsgs]     = useState([{ from: "bot", text: "Hi! 👋 I'm the Martries AI assistant. Ask me anything about our services, pricing, or projects!" }]);
+  const [chatInput, setChatInput]   = useState("");
+  const [chatTyping, setChatTyping] = useState(false);
+  const chatEndRef                  = useRef(null);
+  const [formData, setFormData]     = useState({ name: "", email: "", message: "" });
   const [formState, setFormState] = useState("idle");
 
   // Splash loader
@@ -221,21 +222,47 @@ export default function App() {
     } catch { setFormState("error"); }
   };
 
-  // Chat bot
-  const sendChat = () => {
-    if (!chatInput.trim()) return;
+  // Auto-scroll chat to bottom
+  useEffect(() => { chatEndRef.current?.scrollIntoView({ behavior: "smooth" }); }, [chatMsgs, chatTyping]);
+
+  // Claude AI chat
+  const MARTRIES_CONTEXT = `You are the AI assistant for Martries Creative Solutions, a web development and digital solutions agency based in Abuja, Nigeria. 
+  Founded by Owolabi Muktar Wopa, Martries builds websites, web apps, UI/UX designs, brand identities, and digital strategies.
+  Services: Web Development, Digital Strategy, UI/UX Design, Brand Identity, SEO & Analytics, Maintenance & Support.
+  Projects: MSJ Official Website, ACTLIP Official Website, LFJ Accounting Service, Professional Portfolio Design, Fashion Website Design, Different Shades of FIO, Harib Tech Law Academy (EdTech platform).
+  Contact: Martries.com@gmail.com | +234 9068171145 | Abuja, Nigeria | WhatsApp available.
+  Pricing: Custom quotes based on project scope. Simple websites: 2-4 weeks. Complex platforms: 2-3 months.
+  Be friendly, concise, and helpful. If asked something you don't know, direct them to the contact form or WhatsApp.`;
+
+  const sendChat = async () => {
+    if (!chatInput.trim() || chatTyping) return;
     const msg = chatInput.trim();
-    setChatMsgs(m => [...m, { from: "user", text: msg }]);
+    const updatedMsgs = [...chatMsgs, { from: "user", text: msg }];
+    setChatMsgs(updatedMsgs);
     setChatInput("");
-    setTimeout(() => {
-      const lc = msg.toLowerCase();
-      let reply = "Thanks for reaching out! For detailed enquiries, please use the contact form or WhatsApp us directly.";
-      if (lc.includes("price") || lc.includes("cost")) reply = "Our pricing depends on the project scope. Fill the contact form and we'll send a custom quote within 24 hours!";
-      else if (lc.includes("service") || lc.includes("offer")) reply = "We offer Web Development, UI/UX Design, Digital Strategy, Brand Identity, SEO & Analytics, and Maintenance. Scroll to Services to learn more!";
-      else if (lc.includes("time") || lc.includes("long") || lc.includes("duration")) reply = "Simple websites take 2–4 weeks; complex platforms can take 2–3 months. We'll give you a precise estimate after discovery.";
-      else if (lc.includes("contact") || lc.includes("whatsapp")) reply = "You can reach us via the contact form or WhatsApp button on the page!";
+    setChatTyping(true);
+    try {
+      const history = updatedMsgs
+        .filter(m => m.from !== "bot" || updatedMsgs.indexOf(m) > 0)
+        .map(m => ({ role: m.from === "user" ? "user" : "assistant", content: m.text }));
+      const res = await fetch("https://api.anthropic.com/v1/messages", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          model: "claude-sonnet-4-20250514",
+          max_tokens: 300,
+          system: MARTRIES_CONTEXT,
+          messages: history,
+        }),
+      });
+      const data = await res.json();
+      const reply = data.content?.[0]?.text || "Sorry, I couldn't get a response. Please try again or reach us via WhatsApp!";
       setChatMsgs(m => [...m, { from: "bot", text: reply }]);
-    }, 900);
+    } catch {
+      setChatMsgs(m => [...m, { from: "bot", text: "Something went wrong. Please reach us directly via WhatsApp or the contact form!" }]);
+    } finally {
+      setChatTyping(false);
+    }
   };
 
   const css = `
@@ -275,10 +302,21 @@ export default function App() {
     @media (max-width: 900px) {
       .dsk-nav { display: none !important; }
       .mob-btn { display: flex !important; }
-      .hero-g  { grid-template-columns: 1fr !important; }
+      .hero-g  { grid-template-columns: 1fr !important; gap: 40px !important; padding: 40px 20px !important; }
       .abt-g   { grid-template-columns: 1fr !important; }
       .ftr-g   { grid-template-columns: 1fr !important; }
     }
+    @media (max-width: 900px) {
+      .dsk-nav { display: none !important; }
+      .mob-btn { display: flex !important; }
+      .hero-g  { grid-template-columns: 1fr !important; gap: 40px !important; padding: 40px 20px !important; }
+      .abt-g   { grid-template-columns: 1fr !important; }
+      .ftr-g   { grid-template-columns: 1fr !important; }
+      .hero-text { text-align: center !important; align-items: center !important; }
+      .hero-buttons { justify-content: center !important; }
+      .hero-stats { justify-content: center !important; }
+    }
+    @keyframes typingDot { 0%,60%,100%{transform:scale(1);opacity:0.4;} 30%{transform:scale(1.3);opacity:1;} }
     @media (max-width: 600px) {
       .ctc-g { grid-template-columns: 1fr !important; }
     }
@@ -337,30 +375,29 @@ export default function App() {
         </div>
       )}
 
-            {/* ── HERO ── */}
+      {/* ── HERO ── */}
       <section id="home" style={{ minHeight: "100vh", display: "flex", alignItems: "center", background: d ? "linear-gradient(135deg,#0D1B2E 0%,#111E30 60%,#0D1B2E 100%)" : "linear-gradient(135deg,#F4F8FF 0%,#EAF1FF 60%,#fff 100%)", paddingTop: 68, position: "relative", overflow: "hidden" }}>
         <div style={{ position: "absolute", top: -80, right: -120, width: 520, height: 520, borderRadius: "50%", background: "rgba(58,123,213,0.06)", pointerEvents: "none" }} />
-        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "80px 32px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "center" }} className="hero-g">
-          <div>
-            <div style={{ display: "inline-block", background: d ? "#1B3F72" : "#EAF1FF", color: d ? "#89C4E1" : "#1B3F72", fontSize: 12, fontWeight: 600, letterSpacing: "0.1em", padding: "6px 14px", borderRadius: 2, marginBottom: 24 }}>WEB DEVELOPMENT & DIGITAL SOLUTIONS</div>
-            <h1 className="display" style={{ fontSize: "clamp(38px,5vw,58px)", lineHeight: 1.1, color: textPri, marginBottom: 24 }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "60px 20px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48, alignItems: "center", width: "100%" }} className="hero-g">
+          <div style={{ minWidth: 0 }} className="hero-text">
+            <div style={{ display: "inline-block", background: d ? "#1B3F72" : "#EAF1FF", color: d ? "#89C4E1" : "#1B3F72", fontSize: 11, fontWeight: 600, letterSpacing: "0.08em", padding: "6px 12px", borderRadius: 2, marginBottom: 20, maxWidth: "100%", wordBreak: "break-word" }}>WEB DEVELOPMENT & DIGITAL SOLUTIONS</div>
+            <h1 className="display" style={{ fontSize: "clamp(30px,5vw,58px)", lineHeight: 1.1, color: textPri, marginBottom: 20 }}>
               We Build Digital<br /><span style={{ color: "#3A7BD5" }}>Experiences</span> That<br />Drive Growth
             </h1>
-            <p style={{ fontSize: 17, lineHeight: 1.8, color: textMut, marginBottom: 40, maxWidth: 480 }}>Martries Creative Solutions crafts powerful websites, web apps, and digital strategies that help businesses connect, convert, and scale.</p>
-            <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
+            <p style={{ fontSize: 16, lineHeight: 1.8, color: textMut, marginBottom: 32 }}>Martries Creative Solutions crafts powerful websites, web apps, and digital strategies that help businesses connect, convert, and scale.</p>
+            <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }} className="hero-buttons">
               <button className="btn-primary" onClick={() => scrollTo("Contact")}>Start Your Project</button>
               <button className="btn-outline" onClick={() => scrollTo("Portfolio")}>View Our Work</button>
             </div>
-            <div style={{ display: "flex", gap: 40, marginTop: 52, flexWrap: "wrap" }}>
+            <div style={{ display: "flex", gap: 32, marginTop: 40, flexWrap: "wrap" }} className="hero-stats">
               {[["50+","Projects Delivered"],["98%","Client Satisfaction"],["5+","Years Experience"]].map(([n,l]) => (
-                <div key={l}><div className="display" style={{ fontSize: 32, color: accent }}>{n}</div><div style={{ fontSize: 13, color: textMut, marginTop: 2 }}>{l}</div></div>
+                <div key={l}><div className="display" style={{ fontSize: 28, color: accent }}>{n}</div><div style={{ fontSize: 12, color: textMut, marginTop: 2 }}>{l}</div></div>
               ))}
             </div>
           </div>
           <HowWeWork d={d} accent={accent} textMut={textMut} borderCol={borderCol} />
         </div>
       </section>
-
 
       {/* ── ABOUT ── */}
       <section id="about" style={{ padding: "100px 32px", background: bg }}>
@@ -434,9 +471,7 @@ export default function App() {
                     </div>
                     <h3 style={{ fontSize:16,fontWeight:600,color:accent,marginBottom:8 }}>{p.title}</h3>
                     <p style={{ fontSize:13,lineHeight:1.75,color:textMut,marginBottom:12 }}>{p.desc}</p>
-                    <div style={{ fontSize:12,color:textMut,borderTop:`1px solid ${borderCol}`,paddingTop:10 }}>
-                      {/* <span style={{ fontWeight:600,color:"#3A7BD5" }}>Tech: </span>{p.tech} */}
-                    </div>
+
                   </div>
                 </div>
               </FadeIn>
@@ -603,12 +638,22 @@ export default function App() {
               </div>
               <button onClick={()=>setChatOpen(false)} style={{ background:"none",border:"none",color:"rgba(255,255,255,0.7)",cursor:"pointer",fontSize:16 }}>✕</button>
             </div>
-            <div style={{ height:220,overflowY:"auto",padding:14,display:"flex",flexDirection:"column",gap:10 }}>
-              {chatMsgs.map((m,i) => <div key={i} className={m.from==="user"?"cb-user":"cb-bot"}>{m.text}</div>)}
+            <div style={{ height:260,overflowY:"auto",padding:14,display:"flex",flexDirection:"column",gap:10 }}>
+              {chatMsgs.map((m,i) => (
+                <div key={i} className={m.from==="user"?"cb-user":"cb-bot"} style={{ alignSelf: m.from==="user"?"flex-end":"flex-start" }}>{m.text}</div>
+              ))}
+              {chatTyping && (
+                <div className="cb-bot" style={{ alignSelf:"flex-start", display:"flex", gap:4, alignItems:"center", padding:"10px 16px" }}>
+                  <span style={{ width:7,height:7,borderRadius:"50%",background:"#3A7BD5",animation:"typingDot 1.2s infinite 0s" }} />
+                  <span style={{ width:7,height:7,borderRadius:"50%",background:"#3A7BD5",animation:"typingDot 1.2s infinite 0.2s" }} />
+                  <span style={{ width:7,height:7,borderRadius:"50%",background:"#3A7BD5",animation:"typingDot 1.2s infinite 0.4s" }} />
+                </div>
+              )}
+              <div ref={chatEndRef} />
             </div>
             <div style={{ padding:"10px 12px",borderTop:`1px solid ${borderCol}`,display:"flex",gap:8 }}>
-              <input value={chatInput} onChange={e=>setChatInput(e.target.value)} onKeyDown={e=>e.key==="Enter"&&sendChat()} placeholder="Type a message…" style={{ flex:1,border:`1px solid ${borderCol}`,borderRadius:20,padding:"8px 14px",fontSize:13 }} />
-              <button onClick={sendChat} style={{ background:"#1B3F72",border:"none",borderRadius:"50%",width:36,height:36,cursor:"pointer",color:"#fff",fontSize:16,display:"flex",alignItems:"center",justifyContent:"center" }}>→</button>
+              <input value={chatInput} onChange={e=>setChatInput(e.target.value)} onKeyDown={e=>e.key==="Enter"&&sendChat()} placeholder="Ask me anything…" disabled={chatTyping} style={{ flex:1,border:`1px solid ${borderCol}`,borderRadius:20,padding:"8px 14px",fontSize:13,opacity:chatTyping?0.6:1 }} />
+              <button onClick={sendChat} disabled={chatTyping} style={{ background:chatTyping?"#89A8D0":"#1B3F72",border:"none",borderRadius:"50%",width:36,height:36,cursor:chatTyping?"not-allowed":"pointer",color:"#fff",fontSize:16,display:"flex",alignItems:"center",justifyContent:"center",transition:"background 0.2s" }}>→</button>
             </div>
           </div>
         )}
