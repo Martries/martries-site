@@ -10,22 +10,33 @@ const WHATSAPP_NUMBER = "2349068171145";
 const NAV_LINKS = ["Home", "About", "Services", "Portfolio", "Testimonials", "Contact"];
 
 const SERVICES = [
-  { icon: "◈", title: "Web Development",      desc: "Custom, high-performance websites and web applications built with modern technologies — tailored to your business goals." },
-  { icon: "⬡", title: "Digital Strategy",     desc: "Data-driven digital roadmaps that align technology with your vision, helping you reach the right audience effectively." },
-  { icon: "⬟", title: "UI/UX Design",         desc: "User-centered interfaces that look exceptional and convert visitors into customers through intuitive experiences." },
-  { icon: "◉", title: "Brand Identity",       desc: "Cohesive brand systems — logos, guidelines, and visual languages that make your business instantly recognizable." },
-  { icon: "⬠", title: "SEO & Analytics",      desc: "Visibility strategies and data insights that keep your digital presence sharp, measurable, and constantly improving." },
-  { icon: "◇", title: "Maintenance & Support",desc: "Ongoing technical support, updates, and optimizations so your digital assets always perform at their best." },
+  { icon: "◈", title: "Web & Application Development", desc: "Professional websites, portals and web applications built around clear business and customer needs." },
+  { icon: "⬡", title: "Custom Software & Business Systems", desc: "Dashboards, internal tools, management systems and workflow applications tailored to how organizations operate." },
+  { icon: "⬟", title: "Healthcare & Laboratory Technology", desc: "Confidentiality-conscious healthcare workflows, laboratory tools, result communication systems and operational technology." },
+  { icon: "◉", title: "Systems Integration & Automation", desc: "APIs, controlled data exchange, system-to-system connectivity, clinical integrations and workflow automation." },
+  { icon: "⬠", title: "Digital Platforms & SaaS", desc: "Subscription products, education and LMS platforms, event systems and other scalable digital products." },
+  { icon: "◇", title: "E-commerce & Customer Solutions", desc: "Online stores, booking, consultation, order-management and customer transaction platforms." },
+  { icon: "◈", title: "UI/UX & Digital Product Design", desc: "User-centred interfaces and practical product experiences for websites, applications and software platforms." },
+  { icon: "⬡", title: "Digital Strategy, SEO & Analytics", desc: "Digital planning, search visibility and analytics that support informed, measurable improvements." },
+  { icon: "⬟", title: "Maintenance & Technical Support", desc: "Ongoing maintenance, monitoring, improvements and technical support for deployed digital systems." },
 ];
 
+const PROJECT_PLACEHOLDER = "/martries-logo-transparent.png";
+
 const PORTFOLIO = [
-  { title: "MSJ Official Website",        cat: "Web Development",    desc: "Commissioned by 'My Science Journey' (MSJ) to design and develop their official website — a clean, informative platform promoting science education and awareness.", tech: "HTML, CSS, Bootstrap, JavaScript", img: "https://mukty.netlify.app/projects/msj.png" },
-  { title: "ACTLIP Official Website",     cat: "Web Development",    desc: "Designed and developed the official website for the Africa Center for Technology Law and Innovation Policy — professional, user-friendly, and accessibility-focused.", tech: "HTML, CSS, JavaScript, jQuery", img: "https://mukty.netlify.app/projects/actlip-1.png" },
-  { title: "LFJ Accounting Service",      cat: "Business Website",   desc: "Developed the official website for LFJ Accounting Service, showcasing the firm's services with a focus on responsive design and easy navigation.", tech: "HTML, CSS, JavaScript", img: "https://mukty.netlify.app/projects/lfj.png" },
-  { title: "Professional Portfolio Design",cat: "Portfolio Website", desc: "Designed a professional portfolio website for a photographer, highlighting their work and unique style in an aesthetically pleasing, responsive layout.", tech: "HTML, CSS, JavaScript", img: "https://mukty.netlify.app/projects/izik.png" },
-  { title: "Fashion Website Design",      cat: "Fashion & Lifestyle",desc: "Created a visually striking fashion website with interactive features, delivering a seamless and engaging user experience.", tech: "HTML, CSS, JavaScript, jQuery", img: "https://mukty.netlify.app/projects/mademo.png" },
-  { title: "Different Shades of FIO",     cat: "Creative Web Design",desc: "A creative multi-slide website showcasing three distinct aspects of FIO — the Philanthropist, Medical Laboratory Scientist, and Politician — with seamless transitions.", tech: "HTML, CSS, JavaScript", img: "https://mukty.netlify.app/projects/fio.png" },
-  { title: "Harib Tech Law Academy",      cat: "EdTech Platform",    desc: "Designed and built the full platform for Harib Tech Law Academy — a structured legal-tech education platform preparing lawyers, students, judges, and public officers for the digital economy. Includes LMS integration and student portal.", tech: "Next.js, React, Tailwind CSS, LMS Integration", img: "https://haribacademy.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fharib-logo.2c5b37b4.png&w=384&q=75", link: "https://haribacademy.com" },
+  { title: "Ruth Nanjala", cat: "Web Development", desc: "A delivered professional website presenting Ruth Nanjala's profile, work, activities and professional identity through a clear digital presence.", img: "/portfolio/ruth-nanjala.png", link: "https://ruthnanjala.com" },
+  { title: "Ahmad Jamiu", cat: "Web Development", desc: "A live academic and research website bringing together Dr. Jamiu Ahmad's profile, research, publications, gallery, blog, CV and contact information.", img: "/portfolio/ahmad-jamiu.png", link: "https://ahmadjamiu.com" },
+  { title: "Harib Tech Law Academy", cat: "EdTech", desc: "A structured legal-tech education platform with learning pathways, course delivery and a student portal for law students, legal professionals, judges and public officers.", tech: "Next.js, React, Tailwind CSS, LMS Integration", img: "/portfolio/harib-academy.png", link: "https://haribacademy.com" },
+  { title: "My Science Journey", cat: "Web Development", desc: "A delivered science and education platform sharing African scientists' experiences while supporting mentorship, networking and career exploration.", tech: "HTML, CSS, Bootstrap, JavaScript", img: "https://mukty.netlify.app/projects/msj.png", link: "https://mysciencejourney.com" },
+  { title: "ACTLIP Official Website", cat: "Web Development", desc: "The institutional website for the Africa Center for Technology Law and Innovation Policy, presenting its research, advocacy, programmes and public resources.", tech: "HTML, CSS, JavaScript, jQuery", img: "/portfolio/actlip.png", link: "https://actlip.org" },
+  { title: "LFJ Accounting Services", cat: "Web Development", desc: "A professional services website presenting LFJ Accounting Services, its accounting capabilities and clear routes for client enquiries.", tech: "HTML, CSS, JavaScript", img: "/portfolio/lfj-accounting.png", link: "https://lfjaccountingservices.com" },
+  { title: "Lab Result Notification & Critical Communication Platform", cat: "Healthcare Technology", desc: "Developed as a private operational solution for result-readiness, notification, critical-result communication and traceable laboratory workflows.", img: PROJECT_PLACEHOLDER, placeholder: true },
+  { title: "Care Continuity & Downtime Operations Platform", cat: "Healthcare Technology", desc: "A private continuity platform designed to support essential reception, billing, clinical, laboratory and radiology workflows when a primary hospital system is unavailable.", img: PROJECT_PLACEHOLDER, placeholder: true },
+  { title: "Training Management Platform", cat: "Business Software", desc: "An internal management platform for coordinating staff training, participation, progress, records and administrative oversight.", img: PROJECT_PLACEHOLDER, placeholder: true },
+  { title: "Clinical Analyzer–LIS/EMR Integration", cat: "Systems Integration", desc: "A private healthcare interoperability project supporting controlled analyzer connectivity, structured laboratory messaging, validated data exchange and LIS/EMR workflows.", img: PROJECT_PLACEHOLDER, placeholder: true },
+  { title: "Martries Events", cat: "SaaS / Platforms", desc: "A Martries event-technology product under development for event discovery, registration, ticketing and adaptable event-management workflows.", img: PROJECT_PLACEHOLDER, placeholder: true },
+  { title: "Jewelry E-commerce Platform", cat: "E-commerce", desc: "Currently developing a mobile-friendly jewelry store with product discovery, guest checkout, planned online payments, delivery handling and order-processing workflows.", img: PROJECT_PLACEHOLDER, placeholder: true },
+  { title: "Different Shades of FIO", cat: "Web Development", desc: "A creative multi-slide web experience presenting the philanthropic, medical laboratory science and public-service dimensions of FIO through seamless transitions.", tech: "HTML, CSS, JavaScript", img: "https://mukty.netlify.app/projects/fio.png" },
 ];
 
 const ALL_CATS = ["All", ...Array.from(new Set(PORTFOLIO.map(p => p.cat)))];
@@ -67,10 +78,10 @@ function FadeIn({ children, delay = 0, className = "" }) {
 
 
 const HOW_STEPS = [
-  { num: "01", label: "Discover",  icon: "◎", desc: "We dive deep into your goals, audience, and market to build a solid strategic foundation." },
-  { num: "02", label: "Design",    icon: "⬟", desc: "We craft intuitive, on-brand interfaces that look stunning and feel effortless to use." },
-  { num: "03", label: "Build",     icon: "◈", desc: "Clean, performant code brought to life — tested, optimised, and built to scale." },
-  { num: "04", label: "Launch",    icon: "◉", desc: "We deploy, monitor, and hand over — with ongoing support so you're never on your own." },
+  { num: "01", label: "Discover",  icon: "◎", desc: "We understand your goals, users, workflows and operating context before defining the right solution." },
+  { num: "02", label: "Design",    icon: "⬟", desc: "We shape clear interfaces, system flows and practical experiences around how people need to work." },
+  { num: "03", label: "Build",     icon: "◈", desc: "We develop and test the website, platform, system or integration with reliability in focus." },
+  { num: "04", label: "Launch",    icon: "◉", desc: "We deploy, validate and hand over the solution, with ongoing technical support where required." },
 ];
 
 function HowWeWork({ d, accent, textMut, borderCol }) {
@@ -158,7 +169,7 @@ export default function App() {
   const [activeCat, setActiveCat] = useState("All");
   const [lightbox, setLightbox]   = useState(null);
   const [chatOpen, setChatOpen]     = useState(false);
-  const [chatMsgs, setChatMsgs]     = useState([{ from: "bot", text: "Hi! 👋 I'm the Martries AI assistant. Ask me anything about our services, pricing, or projects!" }]);
+  const [chatMsgs, setChatMsgs]     = useState([{ from: "bot", text: "Hi! 👋 I'm the Martries AI assistant. Ask me about our websites, software solutions, integrations, or projects!" }]);
   const [chatInput, setChatInput]   = useState("");
   const [chatTyping, setChatTyping] = useState(false);
   const chatEndRef                  = useRef(null);
@@ -226,13 +237,15 @@ export default function App() {
   useEffect(() => { chatEndRef.current?.scrollIntoView({ behavior: "smooth" }); }, [chatMsgs, chatTyping]);
 
   // Claude AI chat
-  const MARTRIES_CONTEXT = `You are the AI assistant for Martries Creative Solutions, a web development and digital solutions agency based in Abuja, Nigeria. 
-  Founded by Owolabi Muktar Wopa, Martries builds websites, web apps, UI/UX designs, brand identities, and digital strategies.
-  Services: Web Development, Digital Strategy, UI/UX Design, Brand Identity, SEO & Analytics, Maintenance & Support.
-  Projects: MSJ Official Website, ACTLIP Official Website, LFJ Accounting Service, Professional Portfolio Design, Fashion Website Design, Different Shades of FIO, Harib Tech Law Academy (EdTech platform).
+  const MARTRIES_CONTEXT = `You are the AI assistant for Martries Creative Solutions, a digital solutions and software development company based in Abuja, Nigeria.
+  Martries designs and develops both public-facing digital experiences and private operational software around practical business and organizational needs.
+  Services include websites and web applications; custom software, dashboards and internal business systems; healthcare and laboratory technology; APIs, systems integration and workflow automation; digital platforms, SaaS, education and LMS solutions; event technology; e-commerce and customer platforms; UI/UX and digital product design; digital strategy, SEO and analytics; and ongoing maintenance and technical support.
+  Live public projects include Ruth Nanjala (https://ruthnanjala.com), Ahmad Jamiu (https://ahmadjamiu.com), My Science Journey (https://mysciencejourney.com), ACTLIP (https://actlip.org), LFJ Accounting Services (https://lfjaccountingservices.com), and Harib Tech Law Academy (https://haribacademy.com).
+  Private and operational work includes a lab result notification and critical communication platform, a healthcare downtime operations platform, a training management platform, and a clinical analyzer–LIS/EMR integration. Never provide confidential implementation details or imply these systems are public.
+  Martries products and in-development work include Martries Events and a jewelry e-commerce platform. Describe these honestly as products or work under development, not as launched services.
   Contact: Martries.com@gmail.com | +234 9068171145 | Abuja, Nigeria | WhatsApp available.
-  Pricing: Custom quotes based on project scope. Simple websites: 2-4 weeks. Complex platforms: 2-3 months.
-  Be friendly, concise, and helpful. If asked something you don't know, direct them to the contact form or WhatsApp.`;
+  Pricing and timelines are scoped to each project. Do not invent fixed prices, delivery dates, clients, statistics, features, or implementation details.
+  Be friendly, concise, and helpful. If asked something you do not know, direct the visitor to the contact form or WhatsApp.`;
 
   const sendChat = async () => {
     if (!chatInput.trim() || chatTyping) return;
@@ -325,7 +338,7 @@ export default function App() {
   return (
     <>
       {/* Meta tags via plain head injection */}
-      <title>Martries Creative Solutions — Web Development & Digital Solutions</title>
+      <title>Martries Creative Solutions — Software, Web & Digital Solutions</title>
 
       <style>{css}</style>
 
@@ -380,17 +393,17 @@ export default function App() {
         <div style={{ position: "absolute", top: -80, right: -120, width: 520, height: 520, borderRadius: "50%", background: "rgba(58,123,213,0.06)", pointerEvents: "none" }} />
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "60px 20px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48, alignItems: "center", width: "100%" }} className="hero-g">
           <div style={{ minWidth: 0 }} className="hero-text">
-            <div style={{ display: "inline-block", background: d ? "#1B3F72" : "#EAF1FF", color: d ? "#89C4E1" : "#1B3F72", fontSize: 11, fontWeight: 600, letterSpacing: "0.08em", padding: "6px 12px", borderRadius: 2, marginBottom: 20, maxWidth: "100%", wordBreak: "break-word" }}>WEB DEVELOPMENT & DIGITAL SOLUTIONS</div>
+            <div style={{ display: "inline-block", background: d ? "#1B3F72" : "#EAF1FF", color: d ? "#89C4E1" : "#1B3F72", fontSize: 11, fontWeight: 600, letterSpacing: "0.08em", padding: "6px 12px", borderRadius: 2, marginBottom: 20, maxWidth: "100%", wordBreak: "break-word" }}>SOFTWARE • WEB • SYSTEMS • DIGITAL SOLUTIONS</div>
             <h1 className="display" style={{ fontSize: "clamp(30px,5vw,58px)", lineHeight: 1.1, color: textPri, marginBottom: 20 }}>
-              We Build Digital<br /><span style={{ color: "#3A7BD5" }}>Experiences</span> That<br />Drive Growth
+              We Build Digital<br /><span style={{ color: "#3A7BD5" }}>Solutions</span> That<br />Move Work Forward
             </h1>
-            <p style={{ fontSize: 16, lineHeight: 1.8, color: textMut, marginBottom: 32 }}>Martries Creative Solutions crafts powerful websites, web apps, and digital strategies that help businesses connect, convert, and scale.</p>
+            <p style={{ fontSize: 16, lineHeight: 1.8, color: textMut, marginBottom: 32 }}>Martries designs websites, software platforms and custom digital systems that help organizations improve operations, serve customers and grow.</p>
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }} className="hero-buttons">
               <button className="btn-primary" onClick={() => scrollTo("Contact")}>Start Your Project</button>
               <button className="btn-outline" onClick={() => scrollTo("Portfolio")}>View Our Work</button>
             </div>
             <div style={{ display: "flex", gap: 32, marginTop: 40, flexWrap: "wrap" }} className="hero-stats">
-              {[["50+","Projects Delivered"],["98%","Client Satisfaction"],["5+","Years Experience"]].map(([n,l]) => (
+              {[["Web & Software","Digital products"],["Public & Private","Purpose-built systems"],["Real Workflows","Practical solutions"]].map(([n,l]) => (
                 <div key={l}><div className="display" style={{ fontSize: 28, color: accent }}>{n}</div><div style={{ fontSize: 12, color: textMut, marginTop: 2 }}>{l}</div></div>
               ))}
             </div>
@@ -404,7 +417,7 @@ export default function App() {
         <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "center" }} className="abt-g">
           <FadeIn>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
-              {[["#F4F8FF","Strategy-First"],["#EAF1FF","Human-Centered"],["#E8F5F0","Results-Driven"],["#FFF8EC","Always Iterating"]].map(([bg2,t]) => (
+              {[["#F4F8FF","Business-Aware"],["#EAF1FF","Human-Centered"],["#E8F5F0","Workflow-Focused"],["#FFF8EC","Practical Solutions"]].map(([bg2,t]) => (
                 <div key={t} style={{ background: d ? bg2.replace("FF","22") : bg2, borderRadius: 8, padding: "28px 24px", minHeight: 110 }}>
                   <div style={{ fontSize: 22, marginBottom: 10 }}>◈</div>
                   <div style={{ fontSize: 14, fontWeight: 600, color: "#1B3F72" }}>{t}</div>
@@ -415,8 +428,8 @@ export default function App() {
           <FadeIn delay={0.2}>
             <div style={{ fontSize: 12, fontWeight: 600, letterSpacing: "0.12em", color: "#3A7BD5", marginBottom: 12 }}>WHO WE ARE</div>
             <h2 className="display" style={{ fontSize: "clamp(28px,3.5vw,42px)", color: textPri, marginBottom: 20, lineHeight: 1.2 }}>Creative Minds. Technical Precision.</h2>
-            <p style={{ fontSize: 16, lineHeight: 1.9, color: textMut, marginBottom: 20 }}>Martries Creative Solutions is a digital agency built around one belief: great technology should feel effortless. We blend strategic thinking, beautiful design, and clean engineering to bring brands to life online.</p>
-            <p style={{ fontSize: 16, lineHeight: 1.9, color: textMut, marginBottom: 32 }}>From startups finding their footing to established businesses scaling their digital presence — we partner with organizations that want more than a website. They want a digital edge.</p>
+            <p style={{ fontSize: 16, lineHeight: 1.9, color: textMut, marginBottom: 20 }}>Martries Creative Solutions is a digital solutions and software development company. We combine business understanding, product design and engineering to build technology around practical organizational needs.</p>
+            <p style={{ fontSize: 16, lineHeight: 1.9, color: textMut, marginBottom: 32 }}>Our work ranges from public-facing websites and digital platforms to private workflow tools, healthcare solutions, integrations and custom business software.</p>
             <button className="btn-primary" onClick={() => scrollTo("Services")}>Explore Our Services</button>
           </FadeIn>
         </div>
@@ -427,7 +440,7 @@ export default function App() {
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <FadeIn><div style={{ textAlign: "center", marginBottom: 64 }}>
             <div style={{ fontSize: 12, fontWeight: 600, letterSpacing: "0.12em", color: "#3A7BD5", marginBottom: 12 }}>WHAT WE DO</div>
-            <h2 className="display" style={{ fontSize: "clamp(28px,3.5vw,42px)", color: textPri }}>Services Built for Impact</h2>
+            <h2 className="display" style={{ fontSize: "clamp(28px,3.5vw,42px)", color: textPri }}>Solutions for Digital Work</h2>
           </div></FadeIn>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(300px,1fr))", gap: 24 }}>
             {SERVICES.map((s,i) => (
@@ -461,13 +474,13 @@ export default function App() {
                   onMouseEnter={e=>{e.currentTarget.style.boxShadow="0 12px 40px rgba(27,63,114,0.15)";e.currentTarget.style.transform="translateY(-4px)";}}
                   onMouseLeave={e=>{e.currentTarget.style.boxShadow="none";e.currentTarget.style.transform="translateY(0)";}}>
                   <div style={{ width:"100%",aspectRatio:"16/9",overflow:"hidden",background:d?"#1B3F72":"#EAF1FF",display:"flex",alignItems:"center",justifyContent:"center" }}>
-                    <img src={p.img} alt={p.title} style={{ width:"100%",height:"100%",objectFit:p.link?"contain":"cover",padding:p.link?"24px":0 }}
+                    <img src={p.img} alt={p.title} style={{ width:"100%",height:"100%",objectFit:(p.contain||p.placeholder)?"contain":"cover",padding:(p.contain||p.placeholder)?"24px":0 }}
                       onError={e=>{e.target.style.display="none";e.target.parentNode.style.background="#1B3F72";}} />
                   </div>
                   <div style={{ padding:"20px 22px" }}>
                     <div style={{ display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:10 }}>
                       <div style={{ background:d?"#1B3F72":"#EAF1FF",color:d?"#89C4E1":"#1B3F72",fontSize:11,fontWeight:600,letterSpacing:"0.08em",padding:"4px 10px",borderRadius:2 }}>{p.cat}</div>
-                      {p.link&&<a href={p.link} target="_blank" rel="noopener noreferrer" onClick={e=>e.stopPropagation()} style={{ fontSize:12,color:"#3A7BD5",textDecoration:"none",fontWeight:500 }}>Visit site →</a>}
+                      {p.link&&<a href={p.link} target="_blank" rel="noopener noreferrer" aria-label={`Visit the official ${p.title} website (opens in a new tab)`} onClick={e=>e.stopPropagation()} style={{ fontSize:12,color:"#3A7BD5",textDecoration:"none",fontWeight:500 }}>Visit site →</a>}
                     </div>
                     <h3 style={{ fontSize:16,fontWeight:600,color:accent,marginBottom:8 }}>{p.title}</h3>
                     <p style={{ fontSize:13,lineHeight:1.75,color:textMut,marginBottom:12 }}>{p.desc}</p>
@@ -485,7 +498,7 @@ export default function App() {
         <div onClick={() => setLightbox(null)} style={{ position:"fixed",inset:0,zIndex:2000,background:"rgba(0,0,0,0.78)",display:"flex",alignItems:"center",justifyContent:"center",padding:24,animation:"fadein 0.2s ease" }}>
           <div onClick={e=>e.stopPropagation()} style={{ background:d?"#0D1B2E":"#fff",borderRadius:12,maxWidth:700,width:"100%",overflow:"hidden",boxShadow:"0 32px 80px rgba(0,0,0,0.45)",animation:"fadeUp 0.25s ease" }}>
             <div style={{ width:"100%",aspectRatio:"16/9",background:d?"#1B3F72":"#EAF1FF",display:"flex",alignItems:"center",justifyContent:"center" }}>
-              <img src={lightbox.img} alt={lightbox.title} style={{ width:"100%",height:"100%",objectFit:lightbox.link?"contain":"cover",padding:lightbox.link?"32px":0 }} />
+              <img src={lightbox.img} alt={lightbox.title} style={{ width:"100%",height:"100%",objectFit:(lightbox.contain||lightbox.placeholder)?"contain":"cover",padding:(lightbox.contain||lightbox.placeholder)?"32px":0 }} />
             </div>
             <div style={{ padding:"28px 32px 32px" }}>
               <div style={{ display:"flex",justifyContent:"space-between",alignItems:"flex-start",marginBottom:12 }}>
@@ -496,8 +509,8 @@ export default function App() {
                 <button onClick={()=>setLightbox(null)} style={{ background:"none",border:"none",fontSize:24,cursor:"pointer",color:textMut,paddingLeft:16 }}>✕</button>
               </div>
               <p style={{ fontSize:15,lineHeight:1.8,color:textMut,marginBottom:16 }}>{lightbox.desc}</p>
-              <div style={{ fontSize:13,color:textMut,marginBottom:20 }}><span style={{ fontWeight:600,color:"#3A7BD5" }}>Tech Stack: </span>{lightbox.tech}</div>
-              {lightbox.link && <a href={lightbox.link} target="_blank" rel="noopener noreferrer" style={{ textDecoration:"none" }}><button className="btn-primary">Visit Live Site →</button></a>}
+              {lightbox.tech && <div style={{ fontSize:13,color:textMut,marginBottom:20 }}><span style={{ fontWeight:600,color:"#3A7BD5" }}>Tech Stack: </span>{lightbox.tech}</div>}
+              {lightbox.link && <a href={lightbox.link} target="_blank" rel="noopener noreferrer" aria-label={`Visit the official ${lightbox.title} website (opens in a new tab)`} className="btn-primary" style={{ textDecoration:"none",display:"inline-block" }}>Visit Live Site →</a>}
             </div>
           </div>
         </div>
@@ -532,8 +545,8 @@ export default function App() {
         <div style={{ maxWidth:900,margin:"0 auto" }}>
           <FadeIn><div style={{ textAlign:"center",marginBottom:60 }}>
             <div style={{ fontSize:12,fontWeight:600,letterSpacing:"0.12em",color:"#3A7BD5",marginBottom:12 }}>LET'S TALK</div>
-            <h2 className="display" style={{ fontSize:"clamp(28px,3.5vw,42px)",color:textPri,marginBottom:16 }}>Start Your Project Today</h2>
-            <p style={{ fontSize:16,color:textMut }}>Tell us about your goals and we'll get back to you within 24 hours.</p>
+            <h2 className="display" style={{ fontSize:"clamp(28px,3.5vw,42px)",color:textPri,marginBottom:16 }}>Let's Build the Right Solution</h2>
+            <p style={{ fontSize:16,color:textMut }}>Tell us about the website, software, internal system, integration or digital product you need.</p>
           </div></FadeIn>
           <FadeIn delay={0.15}>
             <div style={{ background:bgSec,borderRadius:12,padding:"48px",border:`1px solid ${borderCol}` }}>
@@ -586,7 +599,7 @@ export default function App() {
                   <div style={{ fontSize:9,color:"#89C4E1",letterSpacing:"0.12em" }}>CREATIVE SOLUTIONS</div>
                 </div>
               </div>
-              <p style={{ fontSize:14,lineHeight:1.9,color:"#89A8D0",maxWidth:300 }}>Building digital experiences that drive real results. Partner with us to grow your brand online.</p>
+              <p style={{ fontSize:14,lineHeight:1.9,color:"#89A8D0",maxWidth:300 }}>Designing websites, software platforms, internal systems and integrations around real business needs.</p>
             </div>
             <div>
               <div style={{ fontSize:12,fontWeight:600,letterSpacing:"0.1em",color:"#89C4E1",marginBottom:20 }}>NAVIGATION</div>
